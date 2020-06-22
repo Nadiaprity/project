@@ -44,7 +44,8 @@ session_start();
     }
 
     .suggest-menu .content p {
-        border-bottom: 1px solid #5555;
+        border-bottom: 1px
+         solid #5555;
     }
 
     .img-box {

@@ -17,35 +17,68 @@
 	   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<style type="text/css">
 
-	 body{
-	width: 100%;
-	height: 100vh;
-	background-image: url('../assets/image.png');
-	background-size: cover;
-	background-repeat: no-repeat;
-}
+	 
 
-		.chat{
+		.chat-box{
+			width: 100%;
+			height: auto;
+			background: #2F4F4F;
+
+		}
+
+		.chat-box .patient-box{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 300px;
+      height: 1000vh;
+      background: #ffffff;
+      z-index: 3;
+      border-right: 1px solid #555;
+      padding-top: 80px;
+    }
+    
+    .chat-box .patient-health{
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 1000vh;
+      background: #ffffff;
+      z-index: 5;
+      border-left: 1px solid #555;
+      padding-top: 50px;
+    }
+
+
+.chat{
 			width: 100%;
 			height: 100vh;
+			background: #ff6347;
+
 		}
 		.card{
 			position: relative;
 			top: 0;
-			width: 500px;
+			width: 600px;
 			margin: auto;
 			height: 100vh;
+
 		}
 		.card .card-body{
 			height: 80vh;
 			overflow-y: scroll;
+
+
 		}
 		.card .card-body .message{
-			background: #00FFFF;
+			background:#00FFFF;
+
 		}
 		.card .card-body p{
 			font-size: 15px;
 			line-height: 1.5rem;
+
 		}
 	.navbar{
       position: fixed;
@@ -55,6 +88,12 @@
       background: red;
       z-index: 99999;
     }
+    
+    
+    
+
+
+		
 	</style>
 </head>
 <body>
@@ -71,18 +110,68 @@
         <a class="nav-link" href="../index.php"> Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="index_dc.php">Services</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="./doctor/doctor_contact.php">Doctor Contact</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" href="logout.php">Logout</a>
       </li>
       
     </ul>
   </div>
 </nav>
+
+
+
+
+<div class="chat-box">
+   <div class="patient-box p-3">
+     <div class="text-center mb-4">
+       <h5>Patient Information</h5>
+     </div>
+     <div class="content">
+       <ul>
+        <?php 
+          $patientId = $_GET['id'];
+          include '../db/connection.php';
+          $select_patient = "SELECT * FROM patient_info WHERE id='$patientId'";
+          $result = mysqli_query($conn, $select_patient);
+            while ($row = mysqli_fetch_array($result)){  
+              $name = $row['name'];
+            ?>
+            <h5>Patient Information</h5>
+         <li><p class="mb-0 text-capitalize">Name: <?php echo $row['name']; ?></p></li>
+         <li><p class="mb-0">Age: <?php echo $row['age']; ?></p></li>
+         <li><p class="mb-0">Gender: <?php echo $row['gender']; ?></p></li>
+         <?php
+          }
+          ?>
+       </ul>
+     </div>
+     </div>
+     <div class="patient-health">
+      
+       <ul>
+        <?php 
+          $doctorId = $_GET['id'];
+          $userId = $_SESSION['userId'];
+          include '../db/connection.php';
+          $select_info = "SELECT * FROM health_info WHERE user_id='$userId' ORDER BY id DESC LIMIT 1";
+          $result = mysqli_query($conn, $select_info);
+            while ($row = mysqli_fetch_array($result)){
+              if($row['suger'] <= 50){
+                $step1 = true;
+              }
+              if($row['suger'] > 50){
+                $step2 = true;
+              }
+            ?>
+            <h5>Health Condition</h5>
+         <li><p class="mb-0">BP:<?php echo $row['pressure']; ?></p></li>
+         <li><p class="mb-0">BS: <?php echo $row['suger']; ?></p></li>
+         <li><p class="mb-0">Temperature: <?php echo $row['temperature']; ?></p></li>
+        <?php
+          }
+        ?>
+       </ul>
+     </div>
+   </div>
 
 
 	 <div class="chat">

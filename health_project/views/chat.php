@@ -187,10 +187,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="../index.php"> Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="index_dc.php">Services</a>
-      </li>
-      <li class="nav-item">
+          <li class="nav-item">
         <a class="nav-link" href="./doctor/doctor_contact.php">Doctor Contact</a>
       </li>
       <li class="nav-item">
@@ -200,6 +197,9 @@
     </ul>
   </div>
 </nav>
+
+
+
 
  <div class="chat-box">
    <div class="patient-box p-3">
@@ -316,9 +316,9 @@
       <h5 class="md-0">You should eat</h5>
        <ul>
          <li><p class="mb-0">rice</p></li>
-         <li><p class="mb-0">rice</p></li>
-         <li><p class="mb-0">rice</p></li>
-         <li><p class="mb-0">rice</p></li>
+         <li><p class="mb-0">Fruits</p></li>
+         <li><p class="mb-0">Lots of water</p></li>
+         <li><p class="mb-0">Vegatibles</p></li>
        </ul>
      </div>
      </div>
@@ -336,8 +336,8 @@
      <div class="should-eat">
       <h5 class="md-0">You should eat</h5>
        <ul>
-         <li><p class="mb-0">Fried rice</p></li>
-         <li><p class="mb-0">Burger</p></li>
+         <li><p class="mb-0">Rice</p></li>
+         <li><p class="mb-0">Fish</p></li>
          <li><p class="mb-0">Chicken</p></li>
        </ul>
      </div>
@@ -345,6 +345,25 @@
     <?php
       }
     ?>
+
+   
+  <div class="step-1">
+      <div class="dieases-title">
+       <h5 class="md-0 text-white">Your health condition is good</h5>
+     </div>
+     <div class="should-eat">
+      <h5 class="md-0">You should eat</h5>
+       <ul>
+         <li><p class="mb-0">Rice</p></li>
+         <li><p class="mb-0">Fish</p></li>
+         <li><p class="mb-0">Chicken</p></li>
+       </ul>
+     </div>
+     </div>
+  
+  
+
+
 
 
    </div>

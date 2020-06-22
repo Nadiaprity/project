@@ -112,7 +112,7 @@
                         <label for="exampleFormControlSelect1">Body symptoms:</label>
                         <select class="form-control" name="body_symptoms" id="exampleFormControlSelect1">
                             <option value="fever">Fever</option>
-                            <option value="jondis">Headche</option>
+                            <option value="jondis">jondis</option>
                         </select>
                     </div>
                     <div class="form-group">

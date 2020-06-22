@@ -24,6 +24,26 @@
   <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
+<style type="text/css">
+
+
+
+
+ .card-body{
+
+    
+ 	background-color: #40E0D0;
+ }
+
+</style>
+
+
+
+
+
+
+
+
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -34,6 +54,10 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+
+
+
+	
 	<div class="container py-5">
 		<div class="row">
 			<div class="col-12 col-lg-10 m-auto">
@@ -47,7 +71,7 @@
 			</div>
 		</div>
 	</div>
-             	
+           	
 	
 </body>
 </html>	

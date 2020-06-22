@@ -9,6 +9,7 @@
 				
 				background-image: url('../../../assets/help.jpg');
 			     background-size: cover;
+			     
 			}
   #form{
 
